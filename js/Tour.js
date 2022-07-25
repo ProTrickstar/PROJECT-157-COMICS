@@ -8,24 +8,24 @@ AFRAME.registerComponent("tour", {
     const thumbNailsRef = [
       {
         id: "taj-mahal",
-        title: "Taj Mahal",
-        url: "./assets/thumbnails/taj_mahal.png",
+        title: "Avengers Forever",
+        url: "./comics/af1.jpeg",
       },
       {
         id: "budapest",
-        title: "Budapest",
-        url: "./assets/thumbnails/budapest.jpg",
+        title: "Avengers Assemble",
+        url: "./comics/comic1.jpg",
       },
 
       {
         id: "eiffel-tower",
-        title: "Eiffel Tower",
-        url: "./assets/thumbnails/eiffel_tower.jpg",
+        title: "Devil's Reign",
+        url: "./comics/comic3.jpeg",
       },
       {
         id: "new-york-city",
-        title: "New York City",
-        url: "./assets/thumbnails/new_york_city.png",
+        title: "Marvel's Spider-Man",
+        url: "./comics/download.jpg",
       },
     ];
     let prevoiusXPosition = -60;
@@ -56,9 +56,9 @@ AFRAME.registerComponent("tour", {
     entityEl.setAttribute("id", id);
     entityEl.setAttribute("visible", true);
     entityEl.setAttribute("geometry", {
-      primitive: "ring",
-      radiusInner: 9,
-      radiusOuter: 10,
+      primitive: "plane",
+      width: 20,
+      height: 28,
     });
     entityEl.setAttribute("position", position);
     entityEl.setAttribute("material", {
@@ -76,9 +76,12 @@ AFRAME.registerComponent("tour", {
     const entityEl = document.createElement("a-entity");
     entityEl.setAttribute("visible", true);
     entityEl.setAttribute("geometry", {
-      primitive: "circle",
-      radius: 9,
+      primitive: "plane",
+      width: 20,
+      height: 28,
     });
+
+    entityEl.setAttribute("position", { x: 0, y: 5, z: 0.1});
     entityEl.setAttribute("material", { src: item.url });
 
     return entityEl;
